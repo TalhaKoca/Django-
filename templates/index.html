@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class = "jumbotron text-center">
+    <h3>Yazılım Bloğuna Hoşgeldiniz</h3>
+    <p>Bu blokta geliştiriciler olarak blog yazılarınızı paylaşabilirsiniz ve insanlara yardımcı olabilirsiniz.</p>
+</div>
+<p>
+    {% if request.user.is_authenticated %}
+          Giriş Yapıldı, {{request.user.username}}
+    {% else %}
+          Giriş Yapılmadı
+    {% endif %}
+  
+
+
+</p>
+<p>
+     <!--{{number1}}
+    template'larımıza bu şekilde içerik gönderebildik...-->
+</p>
+<ul>
+{% for number in numbers  %}
+  <li>{{number}}</li>
+{% endfor %}
+</ul>
+{% endblock body %}
